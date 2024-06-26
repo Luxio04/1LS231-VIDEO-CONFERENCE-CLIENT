@@ -118,7 +118,7 @@ const App = {
 
 
   toggleAudio() {
-    ApiRTCHelper.toggleAudio();
+    this.audio = this.CallActions.toggleAudio();
   },
   toggleVideo() {
     ApiRTCHelper.toggleVideo();

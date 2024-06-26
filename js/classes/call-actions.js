@@ -2,8 +2,8 @@
 class CallActions {
     //agregar metodo toggle audio
         toggleAudio() { 
-            ApiRTCHelper.toggleAudio();
-            return ApiRTCHelper.toggleAudio();
+            const result = ApiRTCHelper.toggleAudio();
+            return result;
         }
     //agregar metodo toggle video 
         toggleVideo() { 
