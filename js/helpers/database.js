@@ -1,7 +1,23 @@
 class DatabaseHelper {    
     static saveChat(chat){
-        return true;
-
+        let promesa = new Promise((resolve, reject) => {
+              
+            const databaseRef = firebase.database().ref('chats');
+            
+            const newChatRef = databaseRef.push();
+            
+            newChatRef.set(chat).then(() => {
+                
+                console.log(newChatRef.key);
+                resolve(newChatRef.key);
+            })
+            .catch((error) => {
+                
+                reject(error);
+            });
+        });
+        
+        return promesa;
     }
 
     static getChats(roomCode){
